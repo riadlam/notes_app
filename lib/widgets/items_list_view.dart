@@ -6,8 +6,11 @@ class itemsListView extends StatelessWidget {
   List<String> cards = [];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(itemBuilder: (context, index) {
-      return const ItemCard();
-    });
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20),
+      child: ListView.builder(itemBuilder: (context, index) {
+        return const ItemCard();
+      }),
+    );
   }
 }
