@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:riad7/widgets/items_list_view.dart';
 
 import 'custom_app_bar.dart';
+import 'item_card.dart';
 
 class NotesAppBody extends StatelessWidget {
   const NotesAppBody({
@@ -10,11 +12,15 @@ class NotesAppBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
+      children: [
         SizedBox(
           height: 40,
         ),
         CustomAppBar(),
+        SizedBox(
+          height: 40,
+        ),
+        Expanded(child: itemsListView())
       ],
     );
   }
