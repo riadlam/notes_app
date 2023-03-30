@@ -10,6 +10,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 20),
+        child: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(Icons.add),
+        ),
+      ),
       body: NotesAppBody(),
     );
   }
