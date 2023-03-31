@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:riad7/widgets/item_card.dart';
+
+import '../Views/edit_note_view.dart';
 
 class itemsListView extends StatelessWidget {
   itemsListView({super.key});
@@ -9,7 +12,13 @@ class itemsListView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: ListView.builder(itemBuilder: (context, index) {
-        return const ItemCard();
+        return GestureDetector(
+          child: const ItemCard(),
+          onTap: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => EditNote()));
+          },
+        );
       }),
     );
   }

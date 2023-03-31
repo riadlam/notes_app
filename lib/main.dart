@@ -13,7 +13,10 @@ class NotesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(brightness: Brightness.dark),
-      home: const HomePage(),
+      home: Padding(
+        padding: const EdgeInsets.only(top: 15),
+        child: const HomePage(),
+      ),
     );
   }
 }

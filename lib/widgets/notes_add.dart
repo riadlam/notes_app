@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
-class NotesAdd extends StatelessWidget {
-  const NotesAdd({super.key});
+import 'custom_button.dart';
 
+class NotesAdd extends StatelessWidget {
+  const NotesAdd({
+    super.key,
+    required this.firstHintText,
+    required this.secondHintText,
+  });
+  final String firstHintText;
+  final String secondHintText;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -13,12 +20,12 @@ class NotesAdd extends StatelessWidget {
             decoration: InputDecoration(
                 border:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
-                hintText: 'Title',
+                hintText: firstHintText,
                 hintStyle: TextStyle(color: Colors.lightBlue, fontSize: 10)),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(
+          padding: EdgeInsets.symmetric(
             horizontal: 20,
           ),
           child: TextFormField(
@@ -27,20 +34,10 @@ class NotesAdd extends StatelessWidget {
                     EdgeInsets.symmetric(vertical: 40, horizontal: 10),
                 border:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
-                hintText: 'Content',
+                hintText: secondHintText,
                 hintStyle: TextStyle(color: Colors.lightBlue, fontSize: 10)),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 40),
-          child: ElevatedButton(
-              style: ElevatedButton.styleFrom(minimumSize: Size(300, 40)),
-              onPressed: () {},
-              child: Text(
-                'Add',
-                style: TextStyle(color: Colors.black, fontSize: 12),
-              )),
-        )
       ],
     );
   }
